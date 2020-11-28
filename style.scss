@@ -12,20 +12,28 @@ html {
   align-items: center;
   display: flex;
   margin: 2rem auto;
-  overflow: hidden;
   position: relative;
   width: 300px;
-  
+
   &__images {
+    align-items: center;
     display: flex;
     transform: translateX(0);
     transition: transform 0.25s;
-    
+
     img {
       border-radius: 5px;
+      height: 250px;
+      width: 250px;
+      &.active {
+        box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.25);
+        height: 300px;
+        width: 300px;
+        z-index: 1;
+      }
     }
   }
-  
+
   &__button {
     background: teal;
     border: 0;
@@ -40,15 +48,15 @@ html {
     transition: opacity 0.25s;
     width: 3rem;
     z-index: 1;
-    
+
     &.previous {
       left: 5px;
     }
-    
+
     &.next {
       right: 5px;
     }
-    
+
     &:hover {
       opacity: 0.5;
     }
